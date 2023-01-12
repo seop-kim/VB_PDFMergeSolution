@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F59AF18E-165D-4821-AE72-981D903D9948}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>VB_PdfMergeSolution.My.MyApplication</StartupObject>
-    <RootNamespace>VB_PdfMergeSolution</RootNamespace>
-    <AssemblyName>VB_PdfMergeSolution</AssemblyName>
+    <StartupObject>PDF병합프로그램.My.MyApplication</StartupObject>
+    <RootNamespace>PDF병합프로그램</RootNamespace>
+    <AssemblyName>PDF병합프로그램</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -37,7 +37,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>VB_PdfMergeSolution.xml</DocumentationFile>
+    <DocumentationFile>PDF병합프로그램.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -47,7 +47,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>VB_PdfMergeSolution.xml</DocumentationFile>
+    <DocumentationFile>PDF병합프로그램.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -64,6 +64,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>pdf_merge_iconfile.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="bcmail-jdk15-1.44, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -227,6 +230,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pdf_merge_iconfile.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
