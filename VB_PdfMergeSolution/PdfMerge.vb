@@ -7,9 +7,10 @@
 	Private Const COMP_MSH As String = "COMPLETE"
 
 	Private Sub PdfMerge_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-		PDFFunction.App_Lunch_Btn_Enabled()
+		PDFFunction.App_All_Btn_Enabled()
 	End Sub
 
+	' Add file
 	Private Sub SelectFileBtn_Click(sender As Object, e As EventArgs) Handles SelectFileBtn.Click
 		Dim selectFile As OpenFileDialog = New OpenFileDialog
 		Dim selectFileResult As DialogResult
@@ -49,6 +50,7 @@
 		PDFFunction.List_Add_Two_Item_Btn_Enabled()
 	End Sub
 
+	' Delete file
 	Private Sub FileDeleteBtn_Click(sender As Object, e As EventArgs) Handles FileDeleteBtn.Click
 		Dim selectItem As Integer = AddFileList.SelectedIndex
 		MsgBox("'" + AddFileList.Items(selectItem) + "' 파일을 목록에서 제거합니다.",, "COMP")
@@ -57,9 +59,54 @@
 		PDFFunction.Delete_Other_Btn_Enabled()
 	End Sub
 
+	' Select ListBox
 	Private Sub AddFileList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AddFileList.SelectedIndexChanged
-		PDFFunction.Delete_Btn_Enabled()
+		PDFFunction.List_Select_Btn_Enabled()
 	End Sub
 
+	' Clear file
+	Private Sub FileCleanBtn_Click(sender As Object, e As EventArgs) Handles FileCleanBtn.Click
+		Files.Clear()
+		AddFileList.Items.Clear()
+		MsgBox("목록을 초기화 하였습니다.",, "COMP")
+		PDFFunction.App_All_Btn_Enabled()
+	End Sub
 
+	' Change Index Up
+	Private Sub FileIndexUp_Click(sender As Object, e As EventArgs) Handles FileIndexUp.Click
+		If (AddFileList.SelectedIndex <= 0) Then
+			Return
+		End If
+
+		Dim upItemIndex As Integer = AddFileList.SelectedIndex
+		Dim downItemIndex As Integer = AddFileList.SelectedIndex - 1
+
+		Dim saveUpItem As String = AddFileList.Items(upItemIndex)
+		Dim saveDownItem As String = AddFileList.Items(downItemIndex)
+
+		AddFileList.Items(downItemIndex) = saveUpItem
+		AddFileList.Items(upItemIndex) = saveDownItem
+
+		AddFileList.SelectedIndex = downItemIndex
+		FileIndexUp.Focus()
+	End Sub
+
+	' Change Index Down
+	Private Sub FileIndexDown_Click(sender As Object, e As EventArgs) Handles FileIndexDown.Click
+		If (AddFileList.Items.Count <= AddFileList.SelectedIndex + 1) Then
+			Return
+		End If
+
+		Dim downItemIndex As Integer = AddFileList.SelectedIndex
+		Dim upItemIndex As Integer = AddFileList.SelectedIndex + 1
+
+		Dim saveDownItem As String = AddFileList.Items(downItemIndex)
+		Dim saveUpItem As String = AddFileList.Items(upItemIndex)
+
+		AddFileList.Items(upItemIndex) = saveDownItem
+		AddFileList.Items(downItemIndex) = saveUpItem
+
+		AddFileList.SelectedIndex = upItemIndex
+		FileIndexDown.Focus()
+	End Sub
 End Class
