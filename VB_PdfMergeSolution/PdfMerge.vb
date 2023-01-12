@@ -1,4 +1,6 @@
-﻿Public Class PdfMerge
+﻿Imports org.apache.pdfbox.util
+
+Public Class PdfMerge
 	Private PDFFunction As PDFFunction = New PDFFunction
 	Private Files As Dictionary(Of String, String) = New Dictionary(Of String, String)
 
@@ -108,5 +110,9 @@
 
 		AddFileList.SelectedIndex = upItemIndex
 		FileIndexDown.Focus()
+	End Sub
+
+	Private Sub FileMergeBtn_Click(sender As Object, e As EventArgs) Handles FileMergeBtn.Click
+		PDFFunction.Merge_PDF(Files)
 	End Sub
 End Class

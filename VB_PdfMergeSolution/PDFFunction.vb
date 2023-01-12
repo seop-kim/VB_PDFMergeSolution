@@ -1,46 +1,99 @@
-﻿Public Class PDFFunction
-    Public Sub App_All_Btn_Enabled()
-        PdfMerge.FileCleanBtn.Enabled = False
-        PdfMerge.FileDeleteBtn.Enabled = False
-        PdfMerge.FileMergeBtn.Enabled = False
-        PdfMerge.FileIndexUp.Enabled = False
-        PdfMerge.FileIndexDown.Enabled = False
-    End Sub
+﻿Imports org.apache.pdfbox.util
 
-    Public Sub List_Add_Item_Btn_Enabled()
-        PdfMerge.FileCleanBtn.Enabled = True
-    End Sub
+Public Class PDFFunction
+	Public Sub App_All_Btn_Enabled()
+		PdfMerge.FileCleanBtn.Enabled = False
+		PdfMerge.FileDeleteBtn.Enabled = False
+		PdfMerge.FileMergeBtn.Enabled = False
+		PdfMerge.FileIndexUp.Enabled = False
+		PdfMerge.FileIndexDown.Enabled = False
+	End Sub
 
-    Public Sub List_Add_Two_Item_Btn_Enabled()
-        If PdfMerge.AddFileList.Items.Count >= 2 Then
-            PdfMerge.FileMergeBtn.Enabled = True
-            PdfMerge.FileIndexUp.Enabled = True
-            PdfMerge.FileIndexDown.Enabled = True
-        End If
-    End Sub
+	Public Sub List_Add_Item_Btn_Enabled()
+		PdfMerge.FileCleanBtn.Enabled = True
+	End Sub
 
-    Public Sub List_Select_Btn_Enabled()
-        If PdfMerge.AddFileList.SelectedIndex = -1 Then
-            PdfMerge.FileDeleteBtn.Enabled = False
-            PdfMerge.FileIndexUp.Enabled = False
-            PdfMerge.FileIndexDown.Enabled = False
-        Else
-            PdfMerge.FileDeleteBtn.Enabled = True
-            PdfMerge.FileIndexUp.Enabled = True
-            PdfMerge.FileIndexDown.Enabled = True
-        End If
-    End Sub
+	Public Sub List_Add_Two_Item_Btn_Enabled()
+		If PdfMerge.AddFileList.Items.Count >= 2 Then
+			PdfMerge.FileMergeBtn.Enabled = True
+			PdfMerge.FileIndexUp.Enabled = True
+			PdfMerge.FileIndexDown.Enabled = True
+		End If
+	End Sub
 
-    Public Sub Delete_Other_Btn_Enabled()
-        If PdfMerge.AddFileList.Items.Count = 1 Then
-            PdfMerge.FileMergeBtn.Enabled = False
-            PdfMerge.FileIndexUp.Enabled = False
-            PdfMerge.FileIndexDown.Enabled = False
-        End If
+	Public Sub List_Select_Btn_Enabled()
+		If PdfMerge.AddFileList.SelectedIndex = -1 Then
+			PdfMerge.FileDeleteBtn.Enabled = False
+			PdfMerge.FileIndexUp.Enabled = False
+			PdfMerge.FileIndexDown.Enabled = False
+		Else
+			PdfMerge.FileDeleteBtn.Enabled = True
+			PdfMerge.FileIndexUp.Enabled = True
+			PdfMerge.FileIndexDown.Enabled = True
+		End If
+	End Sub
 
-        If PdfMerge.AddFileList.Items.Count = 0 Then
-            PdfMerge.FileCleanBtn.Enabled = False
-            PdfMerge.FileMergeBtn.Enabled = False
-        End If
-    End Sub
+	Public Sub Delete_Other_Btn_Enabled()
+		If PdfMerge.AddFileList.Items.Count = 1 Then
+			PdfMerge.FileMergeBtn.Enabled = False
+			PdfMerge.FileIndexUp.Enabled = False
+			PdfMerge.FileIndexDown.Enabled = False
+		End If
+
+		If PdfMerge.AddFileList.Items.Count = 0 Then
+			PdfMerge.FileCleanBtn.Enabled = False
+			PdfMerge.FileMergeBtn.Enabled = False
+		End If
+	End Sub
+
+	Public Sub Merge_PDF(ByVal Files As Dictionary(Of String, String))
+		Dim util As New PDFMergerUtility
+		Dim saveFilePath As New DialogResult
+
+		Dim savePath As SaveFileDialog = Save_File_Setup()
+		saveFilePath = savePath.ShowDialog()
+
+		If Not (saveFilePath = DialogResult.OK) Then
+			MsgBox("취소",, "CANCEL")
+			Return
+		End If
+
+		Dim File_Validate As Boolean = PDF_Merge_Source(util, Files)
+
+		If Not (File_Validate) Then
+			Return
+		End If
+
+		util.setDestinationFileName(savePath.FileName.ToString)
+		util.mergeDocuments()
+		MsgBox("PDF 합치기가 완료되었습니다.",, "COMP")
+	End Sub
+
+	' SaveFileDialog Default Setup
+	Private Function Save_File_Setup() As SaveFileDialog
+		Dim savePath As SaveFileDialog = New SaveFileDialog()
+		savePath.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
+		savePath.DefaultExt = "pdf"
+		savePath.Filter = "PDF (.pdf)|*.pdf"
+		Return savePath
+	End Function
+
+	Private Function PDF_Merge_Source(ByRef util As PDFMergerUtility, ByVal Files As Dictionary(Of String, String)) As Boolean
+		Dim findName As String = ""
+		Try
+			For index = 0 To PdfMerge.AddFileList.Items.Count - 1
+				findName = PdfMerge.AddFileList.Items(index)
+				util.addSource(Files(findName))
+			Next
+			Return True
+		Catch e_runtime As java.lang.RuntimeException
+			MsgBox("'" + findName + "' 파일을 확인해 주세요.", , "ERROR")
+			Return False
+		Catch e_all As Exception
+			MsgBox("[ERROR] 예상치 못한 에러가 발생하였습니다.
+관리자에게 문의해 주세요.
+" + e_all.ToString,, "ERROR")
+			Return False
+		End Try
+	End Function
 End Class
