@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class PdfMerge
     Inherits System.Windows.Forms.Form
 
     'Form은 Dispose를 재정의하여 구성 요소 목록을 정리합니다.
@@ -111,7 +111,7 @@ Partial Class Form1
         Me.FileCleanBtn.Text = "초기화"
         Me.FileCleanBtn.UseVisualStyleBackColor = True
         '
-        'Form1
+        'PdfMerge
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -124,8 +124,8 @@ Partial Class Form1
         Me.Controls.Add(Me.FileCleanBtn)
         Me.Controls.Add(Me.FileDeleteBtn)
         Me.Controls.Add(Me.SelectFileBtn)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Name = "PdfMerge"
+        Me.Text = "PDF MERGE SOLUTION"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
