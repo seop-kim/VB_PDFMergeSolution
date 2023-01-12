@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.VB_PdfMergeSolution.PdfMerge
+            Me.MainForm = Global.PDF병합프로그램.PdfMerge
         End Sub
     End Class
 End Namespace
