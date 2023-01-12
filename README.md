@@ -1,1 +1,6 @@
-# VB_PDFMergeSolution
+# PDF 병합 솔루션 프로그램
+### PDF 병합을 해야하는데 제약이 없는 툴이 없어 제작
+
+- windows 환경 사용 가능
+- PDFBox lib 사용
+- 컨벤션 지키지 않음
