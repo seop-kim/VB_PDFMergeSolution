@@ -22,6 +22,7 @@ Partial Class PdfMerge
     '코드 편집기에서는 수정하지 마세요.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PdfMerge))
 		Me.SelectFileBtn = New System.Windows.Forms.Button()
 		Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
 		Me.FileMergeBtn = New System.Windows.Forms.Button()
@@ -125,10 +126,11 @@ Partial Class PdfMerge
 		Me.Controls.Add(Me.FileDeleteBtn)
 		Me.Controls.Add(Me.SelectFileBtn)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+		Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
 		Me.MaximizeBox = False
 		Me.MinimizeBox = False
 		Me.Name = "PdfMerge"
-		Me.Text = "PDF MERGE SOLUTION"
+		Me.Text = "PDF 병합 프로그램"
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
