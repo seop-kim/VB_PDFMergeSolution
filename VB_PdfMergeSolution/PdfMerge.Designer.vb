@@ -124,6 +124,9 @@ Partial Class PdfMerge
 		Me.Controls.Add(Me.FileCleanBtn)
 		Me.Controls.Add(Me.FileDeleteBtn)
 		Me.Controls.Add(Me.SelectFileBtn)
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+		Me.MaximizeBox = False
+		Me.MinimizeBox = False
 		Me.Name = "PdfMerge"
 		Me.Text = "PDF MERGE SOLUTION"
 		Me.ResumeLayout(False)
