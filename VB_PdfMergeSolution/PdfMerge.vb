@@ -5,6 +5,7 @@ Public Class PdfMerge
 	Private Files As Dictionary(Of String, String) = New Dictionary(Of String, String)
 
 
+
 	Private Const ERROR_MSG As String = "ERROR"
 	Private Const PDF As String = ".pdf"
 	Private Const COMP_MSH As String = "COMPLETE"
@@ -122,5 +123,39 @@ Public Class PdfMerge
 
 	Private Sub Notis_SelectedIndexClick(sender As Object, e As EventArgs) Handles Notis.Click
 		Notis.SelectedItem = Nothing
+	End Sub
+
+	Private Sub AddFileList_DragEnter(sender As Object, e As System.Windows.Forms.DragEventArgs) Handles AddFileList.DragEnter
+		If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+			e.Effect = DragDropEffects.Copy
+		End If
+	End Sub
+
+
+	Private Sub AddFileList_DragDrop(sender As Object, e As System.Windows.Forms.DragEventArgs) Handles AddFileList.DragDrop
+
+		Dim blCheck As Boolean = False
+		'# DragDrop 시 DragEventArgs를 통해 Data를 받아 온다. 
+
+		Dim files() As String = e.Data.GetData(DataFormats.FileDrop)
+		'# Array 형식으로 저장 된 것을 난 파일 하나만 허용 할 거기 때문에 
+		Dim path As String = files(0)
+		Dim name As String = System.IO.Path.GetFileName(path)
+
+		Dim strExtension As String = Nothing
+		Dim fi As New IO.FileInfo(path)
+
+		'# 확장자 알아내기
+		strExtension = fi.Extension
+
+		' 검증 코드 만들어야함
+
+		AddFileList_DragDrop_Comp(name, path)
+		PDFFunction.List_Add_Two_Item_Btn_Enabled()
+	End Sub
+
+	Private Sub AddFileList_DragDrop_Comp(ByVal name As String, ByVal path As String)
+		AddFileList.Items.Add(name)
+		Files.Add(name, path)
 	End Sub
 End Class
