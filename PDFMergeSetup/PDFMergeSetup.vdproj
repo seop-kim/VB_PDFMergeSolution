@@ -16,7 +16,7 @@
         "Entry"
         {
         "MsmKey" = "8:_05ACEF78A73AA8BFE8197305AA500477"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -40,7 +40,7 @@
         "Entry"
         {
         "MsmKey" = "8:_091FAD303CF1CA47314F6A597E766BC9"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -88,7 +88,7 @@
         "Entry"
         {
         "MsmKey" = "8:_0E49E2C78A69D39307E488234D941C18"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -100,13 +100,13 @@
         "Entry"
         {
         "MsmKey" = "8:_1884DC7DC19659BDAC51445D3BDDD885"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_19DA60801341180EB8545AF3673F5D53"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -124,7 +124,7 @@
         "Entry"
         {
         "MsmKey" = "8:_25013004CBC23AB7A490CAB18F9202CF"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -135,12 +135,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_4973234DE9B35C05758D2770F3E9934F"
         "OwnerKey" = "8:_F188218F78BE0B6BF64503FBBF71B12D"
         "MsmSig" = "8:_UNDEFINED"
@@ -148,7 +142,7 @@
         "Entry"
         {
         "MsmKey" = "8:_4973234DE9B35C05758D2770F3E9934F"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -166,13 +160,19 @@
         "Entry"
         {
         "MsmKey" = "8:_53811C35C94E953F252AE9106877BF00"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_5399EC6CED7543A2920FAA5EE771EE0B"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_56749292A24A4BC9A9B0A3DBE42E2730"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -190,7 +190,7 @@
         "Entry"
         {
         "MsmKey" = "8:_64D534B489909CE85A178735330050B6"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -202,7 +202,7 @@
         "Entry"
         {
         "MsmKey" = "8:_6529DE27C934F7FEB40901B69F6CD282"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -226,7 +226,7 @@
         "Entry"
         {
         "MsmKey" = "8:_658D9401AFC71AEAACE2DECC9DDCF73C"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -274,7 +274,7 @@
         "Entry"
         {
         "MsmKey" = "8:_6CBF6E36252F6508C188C2BA784AA918"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -304,7 +304,7 @@
         "Entry"
         {
         "MsmKey" = "8:_70F6462A3CB193207FDAEBDEFA118CFB"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -394,7 +394,7 @@
         "Entry"
         {
         "MsmKey" = "8:_785BD326823230BD98CD2C99AF488E14"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -418,7 +418,7 @@
         "Entry"
         {
         "MsmKey" = "8:_8754A27633C25601B7788A28DDAD36EA"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -442,7 +442,7 @@
         "Entry"
         {
         "MsmKey" = "8:_94E45D350638DAB2502075B6AC6BBCDB"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -466,7 +466,7 @@
         "Entry"
         {
         "MsmKey" = "8:_97BCCBE39E5ACA259828FA0A9D5380DE"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -525,8 +525,14 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A11F75D81929486E29E5932B64C5DEB5"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -550,7 +556,7 @@
         "Entry"
         {
         "MsmKey" = "8:_A5AF7C065CC3486D4C73E790E88B1E44"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -574,7 +580,7 @@
         "Entry"
         {
         "MsmKey" = "8:_B66F1BE06A47E757B3073DCD79126A18"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -592,7 +598,7 @@
         "Entry"
         {
         "MsmKey" = "8:_E4F11D3A79CCC12EF031067D4762BAEB"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -616,7 +622,7 @@
         "Entry"
         {
         "MsmKey" = "8:_F00EC0108AFF11D4DCE2EBC098D9716C"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -718,7 +724,7 @@
         "Entry"
         {
         "MsmKey" = "8:_F188218F78BE0B6BF64503FBBF71B12D"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -754,7 +760,7 @@
         "Entry"
         {
         "MsmKey" = "8:_F314BC0F6E5C43ED951F7D3C3FE0AFB0"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -772,7 +778,7 @@
         "Entry"
         {
         "MsmKey" = "8:_FBECBDAE57BF7C121684B8D42D5B95F1"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -796,7 +802,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+        "OwnerKey" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -967,6 +973,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -983,6 +1005,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -1289,6 +1327,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_56749292A24A4BC9A9B0A3DBE42E2730"
+            {
+            "SourcePath" = "8:C:\\Users\\tskim\\Desktop\\pdf_merge_iconfile.ico"
+            "TargetName" = "8:pdf_merge_iconfile.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_629D83BAE1E643E39FED172ABFAC9069"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_64D534B489909CE85A178735330050B6"
@@ -1873,9 +1931,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:PDFMergeSetup"
+        "ProductName" = "8:PDF합치기"
         "ProductCode" = "8:{91D446D4-C5A7-4AA6-BD43-BA48E070838D}"
-        "PackageCode" = "8:{D8F5546C-999D-4390-89FD-E114B7435A17}"
+        "PackageCode" = "8:{31BDBB95-7559-4FA9-A663-A6ED7830148E}"
         "UpgradeCode" = "8:{AB3D6660-7D06-463A-A978-27622D3047DB}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1883,16 +1941,16 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:seop"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:PDFMergeSetup"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8: seop"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_56749292A24A4BC9A9B0A3DBE42E2730"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -1995,32 +2053,32 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6E7FA9B7321E4E8983DC8233A8C0199F"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_4C26671BE7284D1CA80F4F075583DF1C"
             {
-            "Name" = "8:PDF병합프로그램"
+            "Name" = "8:PDF합치기"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+            "Target" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
             "Folder" = "8:_09D694DCF1D84A889D6D9155627E204D"
             "WorkingFolder" = "8:_629D83BAE1E643E39FED172ABFAC9069"
-            "Icon" = "8:"
+            "Icon" = "8:_56749292A24A4BC9A9B0A3DBE42E2730"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E2D8A14BE1B94F298EAC6CA2036C2AC5"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8B40F619E4D2421B9D1016E6E7A8D60F"
             {
-            "Name" = "8:PDF병합프로그램"
+            "Name" = "8:PDF합치기"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_2605E3B1C9CC4029AB5968159A8056A1"
+            "Target" = "8:_9848DBB54CC5485E9C39D78EC390C37E"
             "Folder" = "8:_1ABB2EE6236546C7A32D00E59CCC4396"
             "WorkingFolder" = "8:_629D83BAE1E643E39FED172ABFAC9069"
-            "Icon" = "8:"
+            "Icon" = "8:_56749292A24A4BC9A9B0A3DBE42E2730"
             "Feature" = "8:"
             }
         }
@@ -2422,9 +2480,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2605E3B1C9CC4029AB5968159A8056A1"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_9848DBB54CC5485E9C39D78EC390C37E"
             {
-            "SourcePath" = "8:..\\VB_PdfMergeSolution\\obj\\Release\\PDF병합프로그램.exe"
+            "SourcePath" = "8:"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_629D83BAE1E643E39FED172ABFAC9069"

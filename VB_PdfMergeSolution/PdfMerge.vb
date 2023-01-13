@@ -119,4 +119,8 @@ Public Class PdfMerge
 	Private Sub FileMergeBtn_Click(sender As Object, e As EventArgs) Handles FileMergeBtn.Click
 		PDFFunction.Merge_PDF(Files)
 	End Sub
+
+	Private Sub Notis_SelectedIndexClick(sender As Object, e As EventArgs) Handles Notis.Click
+		Notis.SelectedItem = Nothing
+	End Sub
 End Class
