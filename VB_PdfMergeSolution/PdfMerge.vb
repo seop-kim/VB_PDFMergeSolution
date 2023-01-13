@@ -115,4 +115,8 @@ Public Class PdfMerge
 	Private Sub FileMergeBtn_Click(sender As Object, e As EventArgs) Handles FileMergeBtn.Click
 		PDFFunction.Merge_PDF(Files)
 	End Sub
+
+	Private Sub AddFileLabel_Click(sender As Object, e As EventArgs) Handles AddFileLabel.Click
+
+	End Sub
 End Class
