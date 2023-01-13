@@ -22,6 +22,7 @@ Partial Class PdfMerge
     '코드 편집기에서는 수정하지 마세요.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PdfMerge))
         Me.SelectFileBtn = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
@@ -33,10 +34,13 @@ Partial Class PdfMerge
         Me.FileDeleteBtn = New System.Windows.Forms.Button()
         Me.FileCleanBtn = New System.Windows.Forms.Button()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Notis = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
         'SelectFileBtn
         '
+        Me.SelectFileBtn.Font = New System.Drawing.Font("나눔고딕", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.SelectFileBtn.Location = New System.Drawing.Point(12, 125)
         Me.SelectFileBtn.Name = "SelectFileBtn"
         Me.SelectFileBtn.Size = New System.Drawing.Size(75, 23)
@@ -50,6 +54,7 @@ Partial Class PdfMerge
         '
         'FileMergeBtn
         '
+        Me.FileMergeBtn.Font = New System.Drawing.Font("나눔고딕", 8.999999!)
         Me.FileMergeBtn.Location = New System.Drawing.Point(338, 31)
         Me.FileMergeBtn.Name = "FileMergeBtn"
         Me.FileMergeBtn.Size = New System.Drawing.Size(75, 115)
@@ -60,17 +65,18 @@ Partial Class PdfMerge
         'AddFileLabel
         '
         Me.AddFileLabel.AutoSize = True
-        Me.AddFileLabel.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        Me.AddFileLabel.Location = New System.Drawing.Point(10, 14)
+        Me.AddFileLabel.Font = New System.Drawing.Font("나눔고딕", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.AddFileLabel.Location = New System.Drawing.Point(10, 9)
         Me.AddFileLabel.Name = "AddFileLabel"
-        Me.AddFileLabel.Size = New System.Drawing.Size(136, 12)
+        Me.AddFileLabel.Size = New System.Drawing.Size(112, 14)
         Me.AddFileLabel.TabIndex = 2
         Me.AddFileLabel.Text = "PDF 목록 (병합 순서)"
         '
         'AddFileList
         '
+        Me.AddFileList.Font = New System.Drawing.Font("나눔고딕", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.AddFileList.FormattingEnabled = True
-        Me.AddFileList.ItemHeight = 12
+        Me.AddFileList.ItemHeight = 14
         Me.AddFileList.Location = New System.Drawing.Point(12, 31)
         Me.AddFileList.Name = "AddFileList"
         Me.AddFileList.Size = New System.Drawing.Size(320, 88)
@@ -78,6 +84,7 @@ Partial Class PdfMerge
         '
         'FileIndexUp
         '
+        Me.FileIndexUp.Font = New System.Drawing.Font("나눔고딕", 8.999999!)
         Me.FileIndexUp.Location = New System.Drawing.Point(276, 125)
         Me.FileIndexUp.Name = "FileIndexUp"
         Me.FileIndexUp.Size = New System.Drawing.Size(25, 23)
@@ -87,6 +94,7 @@ Partial Class PdfMerge
         '
         'FileIndexDown
         '
+        Me.FileIndexDown.Font = New System.Drawing.Font("나눔고딕", 8.999999!)
         Me.FileIndexDown.Location = New System.Drawing.Point(307, 125)
         Me.FileIndexDown.Name = "FileIndexDown"
         Me.FileIndexDown.Size = New System.Drawing.Size(25, 23)
@@ -96,6 +104,7 @@ Partial Class PdfMerge
         '
         'FileDeleteBtn
         '
+        Me.FileDeleteBtn.Font = New System.Drawing.Font("나눔고딕", 8.999999!)
         Me.FileDeleteBtn.Location = New System.Drawing.Point(93, 125)
         Me.FileDeleteBtn.Name = "FileDeleteBtn"
         Me.FileDeleteBtn.Size = New System.Drawing.Size(75, 23)
@@ -105,6 +114,7 @@ Partial Class PdfMerge
         '
         'FileCleanBtn
         '
+        Me.FileCleanBtn.Font = New System.Drawing.Font("나눔고딕", 8.999999!)
         Me.FileCleanBtn.Location = New System.Drawing.Point(174, 125)
         Me.FileCleanBtn.Name = "FileCleanBtn"
         Me.FileCleanBtn.Size = New System.Drawing.Size(75, 23)
@@ -112,11 +122,30 @@ Partial Class PdfMerge
         Me.FileCleanBtn.Text = "초기화"
         Me.FileCleanBtn.UseVisualStyleBackColor = True
         '
+        'Timer1
+        '
+        Me.Timer1.Interval = 50
+        '
+        'Notis
+        '
+        Me.Notis.BackColor = System.Drawing.SystemColors.Control
+        Me.Notis.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Notis.CausesValidation = False
+        Me.Notis.Font = New System.Drawing.Font("나눔고딕", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.Notis.ForeColor = System.Drawing.Color.Gray
+        Me.Notis.FormattingEnabled = True
+        Me.Notis.Location = New System.Drawing.Point(236, 9)
+        Me.Notis.Name = "Notis"
+        Me.Notis.Size = New System.Drawing.Size(177, 13)
+        Me.Notis.TabIndex = 9
+        Me.Notis.TabStop = False
+        '
         'PdfMerge
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(424, 155)
+        Me.Controls.Add(Me.Notis)
         Me.Controls.Add(Me.FileIndexDown)
         Me.Controls.Add(Me.FileIndexUp)
         Me.Controls.Add(Me.AddFileList)
@@ -146,4 +175,6 @@ Partial Class PdfMerge
     Friend WithEvents FileDeleteBtn As Button
     Friend WithEvents FileCleanBtn As Button
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents Notis As ListBox
 End Class

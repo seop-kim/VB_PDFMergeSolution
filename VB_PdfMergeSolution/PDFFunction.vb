@@ -1,6 +1,7 @@
 ﻿Imports org.apache.pdfbox.util
 
 Public Class PDFFunction
+	Dim ListIndexLocation As Integer = -1
 	Public Sub App_All_Btn_Enabled()
 		PdfMerge.FileCleanBtn.Enabled = False
 		PdfMerge.FileDeleteBtn.Enabled = False
@@ -67,6 +68,7 @@ Public Class PDFFunction
 		util.setDestinationFileName(savePath.FileName.ToString)
 		util.mergeDocuments()
 		MsgBox("PDF 합치기가 완료되었습니다.",, "COMP")
+		Notis_Add("[병합]", "파일 병합이 완료되었습니다.")
 	End Sub
 
 	' SaveFileDialog Default Setup
@@ -96,4 +98,12 @@ Public Class PDFFunction
 			Return False
 		End Try
 	End Function
+
+	Public Sub Notis_Add(ByVal functionName As String, ByVal msg As String)
+		PdfMerge.Notis.Items.Add(functionName + " " + msg)
+		ListIndexLocation = ListIndexLocation + 1
+		PdfMerge.Notis.SelectedIndex = ListIndexLocation
+		PdfMerge.Notis.SelectedItem = Nothing
+	End Sub
+
 End Class

@@ -4,6 +4,7 @@ Public Class PdfMerge
 	Private PDFFunction As PDFFunction = New PDFFunction
 	Private Files As Dictionary(Of String, String) = New Dictionary(Of String, String)
 
+
 	Private Const ERROR_MSG As String = "ERROR"
 	Private Const PDF As String = ".pdf"
 	Private Const COMP_MSH As String = "COMPLETE"
@@ -43,7 +44,8 @@ Public Class PdfMerge
 			AddFileList.Items.Add(fileName)
 			Files.Add(fileName, filePath)
 			PDFFunction.List_Add_Item_Btn_Enabled()
-			MsgBox("'" + fileName + "'이(가) 추가되었습니다.",, COMP_MSH)
+			'MsgBox("'" + fileName + "'이(가) 추가되었습니다.",, COMP_MSH)
+			PDFFunction.Notis_Add("[추가]", "파일을 추가하였습니다.")
 		Else
 			MsgBox("PDF 형식의 파일만 선택이 가능합니다.",, COMP_MSH)
 			Return
@@ -55,10 +57,11 @@ Public Class PdfMerge
 	' Delete file
 	Private Sub FileDeleteBtn_Click(sender As Object, e As EventArgs) Handles FileDeleteBtn.Click
 		Dim selectItem As Integer = AddFileList.SelectedIndex
-		MsgBox("'" + AddFileList.Items(selectItem) + "' 파일을 목록에서 제거합니다.",, "COMP")
+		'MsgBox("'" + AddFileList.Items(selectItem) + "' 파일을 목록에서 제거합니다.",, "COMP")
 		Files.Remove(AddFileList.Items(selectItem))
 		AddFileList.Items.RemoveAt(selectItem)
 		PDFFunction.Delete_Other_Btn_Enabled()
+		PDFFunction.Notis_Add("[삭제]", "선택항목을 삭제하였습니다.")
 	End Sub
 
 	' Select ListBox
@@ -70,8 +73,9 @@ Public Class PdfMerge
 	Private Sub FileCleanBtn_Click(sender As Object, e As EventArgs) Handles FileCleanBtn.Click
 		Files.Clear()
 		AddFileList.Items.Clear()
-		MsgBox("목록을 초기화 하였습니다.",, "COMP")
+		'MsgBox("목록을 초기화 하였습니다.",, "COMP")
 		PDFFunction.App_All_Btn_Enabled()
+		PDFFunction.Notis_Add("[초기화]", "목록을 초기화 하였습니다.")
 	End Sub
 
 	' Change Index Up
@@ -114,9 +118,5 @@ Public Class PdfMerge
 
 	Private Sub FileMergeBtn_Click(sender As Object, e As EventArgs) Handles FileMergeBtn.Click
 		PDFFunction.Merge_PDF(Files)
-	End Sub
-
-	Private Sub AddFileLabel_Click(sender As Object, e As EventArgs) Handles AddFileLabel.Click
-
 	End Sub
 End Class
