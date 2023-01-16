@@ -14,7 +14,6 @@ Public Class PdfMerge
 
 
 	Private Const ERROR_MSG As String = "ERROR"
-	Private Const PDF As String = ".pdf"
 	Private Const COMP_MSH As String = "COMPLETE"
 
 	Private Sub PdfMerge_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -130,26 +129,21 @@ Public Class PdfMerge
 
 
 	Private Sub AddFileList_DragDrop(sender As Object, e As System.Windows.Forms.DragEventArgs) Handles AddFileList.DragDrop
-
-		Dim blCheck As Boolean = False
-		'# DragDrop 시 DragEventArgs를 통해 Data를 받아 온다. 
-
 		Dim files() As String = e.Data.GetData(DataFormats.FileDrop)
-		Dim fi As IO.FileInfo = Nothing
+		Dim fileInfo As IO.FileInfo = Nothing
 
 		For index = 0 To files.Length - 1
 			filePath = files(index)
 			fileName = System.IO.Path.GetFileName(filePath)
-			fi = New IO.FileInfo(filePath)
-			fileExtension = fi.Extension
+			fileInfo = New IO.FileInfo(filePath)
+			fileExtension = fileInfo.Extension
 
 			If Not (PDFValidator.File_Compare(fileName)) Then ' 목록에 동일한 파일명이 존재할 경우 추가 불가
-				Return
+				Continue For
 			End If
 
 			If Not (PDFValidator.File_Ext_PDF(fileExtension)) Then ' PDF 형식의 파일인지 확인
-				MsgBox("PDF 형식의 파일만 선택이 가능합니다.",, COMP_MSH)
-				Return
+				Continue For
 			End If
 
 			AddFileList_Add(fileName, filePath)
