@@ -2,8 +2,15 @@
 
 Public Class PdfMerge
 	Private PDFFunction As PDFFunction = New PDFFunction
+	Private PDFValidator As PDFValidator = New PDFValidator
 	Private Files As Dictionary(Of String, String) = New Dictionary(Of String, String)
+	Private filePath As String = ""
+	Private fileName As String = ""
+	Private fileExtension As String = ""
 
+	Function getFiles() As Dictionary(Of String, String)
+		Return Files
+	End Function
 
 
 	Private Const ERROR_MSG As String = "ERROR"
@@ -18,9 +25,7 @@ Public Class PdfMerge
 	Private Sub SelectFileBtn_Click(sender As Object, e As EventArgs) Handles SelectFileBtn.Click
 		Dim selectFile As OpenFileDialog = New OpenFileDialog
 		Dim selectFileResult As DialogResult
-		Dim filePath As String = ""
-		Dim fileName As String = ""
-		Dim fileExtension As String = ""
+
 
 		selectFile.Filter = "PDF (.pdf)|*.pdf" ' PDF만 선택할 수 있도록 Filter 설정
 		selectFileResult = selectFile.ShowDialog()
@@ -35,24 +40,16 @@ Public Class PdfMerge
 			Return
 		End If
 
-		If Files.ContainsKey(fileName) Then ' 목록에 동일한 파일명이 존재할 경우 추가 불가
-			MsgBox("'" + fileName + "'과 동일한 파일명이 존재합니다.
-파일명을 다르게 설정해 주세요.",, ERROR_MSG)
+		If Not (PDFValidator.File_Compare(fileName)) Then ' 목록에 동일한 파일명이 존재할 경우 추가 불가
 			Return
 		End If
 
-		If fileExtension.Equals(PDF) Then ' PDF 형식의 파일인지 확인
-			AddFileList.Items.Add(fileName)
-			Files.Add(fileName, filePath)
-			PDFFunction.List_Add_Item_Btn_Enabled()
-			'MsgBox("'" + fileName + "'이(가) 추가되었습니다.",, COMP_MSH)
-			PDFFunction.Notis_Add("[추가]", "파일을 추가하였습니다.")
-		Else
+		If Not (PDFValidator.File_Ext_PDF(fileExtension)) Then ' PDF 형식의 파일인지 확인
 			MsgBox("PDF 형식의 파일만 선택이 가능합니다.",, COMP_MSH)
 			Return
 		End If
 
-		PDFFunction.List_Add_Two_Item_Btn_Enabled()
+		AddFileList_Add(fileName, filePath)
 	End Sub
 
 	' Delete file
@@ -138,24 +135,32 @@ Public Class PdfMerge
 		'# DragDrop 시 DragEventArgs를 통해 Data를 받아 온다. 
 
 		Dim files() As String = e.Data.GetData(DataFormats.FileDrop)
-		'# Array 형식으로 저장 된 것을 난 파일 하나만 허용 할 거기 때문에 
-		Dim path As String = files(0)
-		Dim name As String = System.IO.Path.GetFileName(path)
+		Dim fi As IO.FileInfo = Nothing
 
-		Dim strExtension As String = Nothing
-		Dim fi As New IO.FileInfo(path)
+		For index = 0 To files.Length - 1
+			filePath = files(index)
+			fileName = System.IO.Path.GetFileName(filePath)
+			fi = New IO.FileInfo(filePath)
+			fileExtension = fi.Extension
 
-		'# 확장자 알아내기
-		strExtension = fi.Extension
+			If Not (PDFValidator.File_Compare(fileName)) Then ' 목록에 동일한 파일명이 존재할 경우 추가 불가
+				Return
+			End If
 
-		' 검증 코드 만들어야함
+			If Not (PDFValidator.File_Ext_PDF(fileExtension)) Then ' PDF 형식의 파일인지 확인
+				MsgBox("PDF 형식의 파일만 선택이 가능합니다.",, COMP_MSH)
+				Return
+			End If
 
-		AddFileList_DragDrop_Comp(name, path)
-		PDFFunction.List_Add_Two_Item_Btn_Enabled()
+			AddFileList_Add(fileName, filePath)
+		Next
 	End Sub
 
-	Private Sub AddFileList_DragDrop_Comp(ByVal name As String, ByVal path As String)
+	Private Sub AddFileList_Add(ByVal name As String, ByVal path As String)
 		AddFileList.Items.Add(name)
 		Files.Add(name, path)
+		PDFFunction.List_Add_Item_Btn_Enabled()
+		PDFFunction.List_Add_Two_Item_Btn_Enabled()
+		PDFFunction.Notis_Add("[추가]", "파일을 추가하였습니다. " + name)
 	End Sub
 End Class
