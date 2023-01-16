@@ -74,6 +74,7 @@ Partial Class PdfMerge
         '
         'AddFileList
         '
+        Me.AddFileList.AllowDrop = True
         Me.AddFileList.Font = New System.Drawing.Font("나눔고딕", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.AddFileList.FormattingEnabled = True
         Me.AddFileList.ItemHeight = 14
