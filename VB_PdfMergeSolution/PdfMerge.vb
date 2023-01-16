@@ -40,6 +40,8 @@ Public Class PdfMerge
 		End If
 
 		If Not (PDFValidator.File_Compare(fileName)) Then ' 목록에 동일한 파일명이 존재할 경우 추가 불가
+			MsgBox("'" + fileName + "'과 동일한 파일명이 존재합니다.
+파일명을 다르게 설정해 주세요.",, ERROR_MSG)
 			Return
 		End If
 
@@ -131,6 +133,8 @@ Public Class PdfMerge
 	Private Sub AddFileList_DragDrop(sender As Object, e As System.Windows.Forms.DragEventArgs) Handles AddFileList.DragDrop
 		Dim files() As String = e.Data.GetData(DataFormats.FileDrop)
 		Dim fileInfo As IO.FileInfo = Nothing
+		Dim errorCount As Integer = 0
+		Dim errorMsg As String = ""
 
 		For index = 0 To files.Length - 1
 			filePath = files(index)
@@ -139,15 +143,23 @@ Public Class PdfMerge
 			fileExtension = fileInfo.Extension
 
 			If Not (PDFValidator.File_Compare(fileName)) Then ' 목록에 동일한 파일명이 존재할 경우 추가 불가
+				AddFileError(errorCount, errorMsg, " (파일명 중복)")
 				Continue For
 			End If
 
 			If Not (PDFValidator.File_Ext_PDF(fileExtension)) Then ' PDF 형식의 파일인지 확인
+				AddFileError(errorCount, errorMsg, " (PDF 외 형식)")
 				Continue For
 			End If
 
 			AddFileList_Add(fileName, filePath)
 		Next
+		If Not (errorCount = 0) Then
+			Dim errorResultMsg As String = String.Concat("총 '", errorCount, "' 건 추가에 실패한 파일이 있습니다.
+
+[목록]", errorMsg)
+			MsgBox(errorResultMsg)
+		End If
 	End Sub
 
 	Private Sub AddFileList_Add(ByVal name As String, ByVal path As String)
@@ -156,5 +168,11 @@ Public Class PdfMerge
 		PDFFunction.List_Add_Item_Btn_Enabled()
 		PDFFunction.List_Add_Two_Item_Btn_Enabled()
 		PDFFunction.Notis_Add("[추가]", "파일을 추가하였습니다. " + name)
+	End Sub
+
+	Private Sub AddFileError(ByRef count As Integer, ByRef msg As String, ByVal errorType As String)
+		count = count + 1
+		msg = msg + "
+" + fileName + errorType
 	End Sub
 End Class
