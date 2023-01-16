@@ -8,3 +8,6 @@
 
 ## Build
 참고 : https://blog.naver.com/goldrushing/130166294554
+
+## Setup Download
+[Setup link](https://drive.google.com/drive/folders/1IMMnyYxpF8QBWqZB54OUvY_aZd8IGG25?usp=sharing)
