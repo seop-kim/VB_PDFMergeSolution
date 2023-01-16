@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VB_PdfMergeSolution", "VB_PdfMergeSolution\VB_PdfMergeSolution.vbproj", "{F59AF18E-165D-4821-AE72-981D903D9948}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PDFMergeSetup", "PDFMergeSetup\PDFMergeSetup.vdproj", "{BC28E348-948E-4D73-BFCD-F8BF8D6055BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{F59AF18E-165D-4821-AE72-981D903D9948}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F59AF18E-165D-4821-AE72-981D903D9948}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F59AF18E-165D-4821-AE72-981D903D9948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC28E348-948E-4D73-BFCD-F8BF8D6055BB}.Debug|Any CPU.ActiveCfg = Debug
+		{BC28E348-948E-4D73-BFCD-F8BF8D6055BB}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
