@@ -36,6 +36,7 @@ Partial Class PdfMerge
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Notis = New System.Windows.Forms.ListBox()
+        Me.Merge_ProgressBar = New System.Windows.Forms.ProgressBar()
         Me.SuspendLayout()
         '
         'SelectFileBtn
@@ -141,11 +142,20 @@ Partial Class PdfMerge
         Me.Notis.TabIndex = 9
         Me.Notis.TabStop = False
         '
+        'Merge_ProgressBar
+        '
+        Me.Merge_ProgressBar.Location = New System.Drawing.Point(13, 105)
+        Me.Merge_ProgressBar.Name = "Merge_ProgressBar"
+        Me.Merge_ProgressBar.Size = New System.Drawing.Size(319, 14)
+        Me.Merge_ProgressBar.TabIndex = 10
+        Me.Merge_ProgressBar.Visible = False
+        '
         'PdfMerge
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(424, 155)
+        Me.Controls.Add(Me.Merge_ProgressBar)
         Me.Controls.Add(Me.Notis)
         Me.Controls.Add(Me.FileIndexDown)
         Me.Controls.Add(Me.FileIndexUp)
@@ -178,4 +188,5 @@ Partial Class PdfMerge
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Notis As ListBox
+    Friend WithEvents Merge_ProgressBar As ProgressBar
 End Class
