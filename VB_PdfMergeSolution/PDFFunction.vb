@@ -17,8 +17,6 @@ Public Class PDFFunction
 	Public Sub List_Add_Two_Item_Btn_Enabled()
 		If PdfMerge.AddFileList.Items.Count >= 2 Then
 			PdfMerge.FileMergeBtn.Enabled = True
-			PdfMerge.FileIndexUp.Enabled = True
-			PdfMerge.FileIndexDown.Enabled = True
 		End If
 	End Sub
 
@@ -51,24 +49,38 @@ Public Class PDFFunction
 		Dim util As New PDFMergerUtility
 		Dim saveFilePath As New DialogResult
 
+
+
 		Dim savePath As SaveFileDialog = Save_File_Setup()
 		saveFilePath = savePath.ShowDialog()
-
+		PdfMerge.Merge_ProgressBar.Visible = True
+		PdfMerge.Merge_ProgressBar.Value = 50
 		If Not (saveFilePath = DialogResult.OK) Then
-			MsgBox("취소",, "CANCEL")
+			Notis_Add("[취소]", "파일 병합을 취소하였습니다.")
+			PdfMerge.Merge_ProgressBar.Visible = False
 			Return
 		End If
 
 		Dim File_Validate As Boolean = PDF_Merge_Source(util, Files)
-
+		PdfMerge.Merge_ProgressBar.Value = 70
 		If Not (File_Validate) Then
+			PdfMerge.Merge_ProgressBar.Visible = False
 			Return
 		End If
-
+		PdfMerge.Merge_ProgressBar.Value = 80
 		util.setDestinationFileName(savePath.FileName.ToString)
+
+		' 병합 완료 표현을 위한 프로그래스바 응용
+		For value = 80 To 99
+			PdfMerge.Merge_ProgressBar.Value = value
+			Threading.Thread.Sleep(20)
+		Next
+
 		util.mergeDocuments()
-		MsgBox("PDF 합치기가 완료되었습니다.",, "COMP")
+		PdfMerge.Merge_ProgressBar.Value = 100
 		Notis_Add("[병합]", "파일 병합이 완료되었습니다.")
+		PdfMerge.Merge_ProgressBar.Visible = False
+		PdfMerge.Merge_ProgressBar.Value = 0
 	End Sub
 
 	' SaveFileDialog Default Setup
@@ -105,5 +117,4 @@ Public Class PDFFunction
 		PdfMerge.Notis.SelectedIndex = ListIndexLocation
 		PdfMerge.Notis.SelectedItem = Nothing
 	End Sub
-
 End Class

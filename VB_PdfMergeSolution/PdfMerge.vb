@@ -14,7 +14,7 @@ Public Class PdfMerge
 
 
 	Private Const ERROR_MSG As String = "ERROR"
-	Private Const COMP_MSH As String = "COMPLETE"
+	Private Const COMP_MSH As String = "-"
 
 	Private Sub PdfMerge_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		PDFFunction.App_All_Btn_Enabled()
@@ -35,7 +35,7 @@ Public Class PdfMerge
 			fileExtension = IO.Path.GetExtension(filePath)
 
 		ElseIf selectFileResult = DialogResult.Cancel Then
-			MsgBox("파일을 선택하지 않았습니다.",, ERROR_MSG)
+			PDFFunction.Notis_Add("[취소]", "파일추가를 취소하였습니다.")
 			Return
 		End If
 
@@ -56,16 +56,31 @@ Public Class PdfMerge
 	' Delete file
 	Private Sub FileDeleteBtn_Click(sender As Object, e As EventArgs) Handles FileDeleteBtn.Click
 		Dim selectItem As Integer = AddFileList.SelectedIndex
-		'MsgBox("'" + AddFileList.Items(selectItem) + "' 파일을 목록에서 제거합니다.",, "COMP")
 		Files.Remove(AddFileList.Items(selectItem))
 		AddFileList.Items.RemoveAt(selectItem)
 		PDFFunction.Delete_Other_Btn_Enabled()
 		PDFFunction.Notis_Add("[삭제]", "선택항목을 삭제하였습니다.")
 	End Sub
 
-	' Select ListBox
+	' Change ListBox
 	Private Sub AddFileList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AddFileList.SelectedIndexChanged
 		PDFFunction.List_Select_Btn_Enabled()
+	End Sub
+
+	' Select double click ListBox
+	Private Sub AddFileList_DoubleClick(sender As Object, e As EventArgs) Handles AddFileList.DoubleClick
+		If Not (AddFileList.SelectedItem = Nothing) Then
+			AddFileList.SelectedItem = Nothing
+		End If
+
+		If AddFileList.SelectedItem = Nothing Then
+			SelectFileBtn_Click(sender, e)
+		End If
+	End Sub
+
+	' Select one click ListBox
+	Private Sub AddFileList_OneClick(sender As Object, e As EventArgs) Handles AddFileList.Click
+
 	End Sub
 
 	' Clear file
