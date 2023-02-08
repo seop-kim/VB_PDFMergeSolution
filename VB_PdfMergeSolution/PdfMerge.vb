@@ -26,6 +26,7 @@ Public Class PdfMerge
 		Dim selectFileResult As DialogResult
 
 
+
 		selectFile.Filter = "PDF (.pdf)|*.pdf" ' PDF만 선택할 수 있도록 Filter 설정
 		selectFileResult = selectFile.ShowDialog()
 

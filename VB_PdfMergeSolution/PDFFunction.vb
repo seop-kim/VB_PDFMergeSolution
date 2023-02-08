@@ -62,6 +62,7 @@ Public Class PDFFunction
 		End If
 
 		Dim File_Validate As Boolean = PDF_Merge_Source(util, Files)
+
 		PdfMerge.Merge_ProgressBar.Value = 70
 		If Not (File_Validate) Then
 			PdfMerge.Merge_ProgressBar.Visible = False
@@ -76,7 +77,19 @@ Public Class PDFFunction
 			Threading.Thread.Sleep(20)
 		Next
 
-		util.mergeDocuments()
+		Try
+			util.mergeDocuments()
+
+		Catch e_all As Exception
+			MsgBox("[ERROR] 병합이 불가능한 파일이 있습니다
+확인 후 병합을 재시도 해주세요.
+" + e_all.ToString,, "ERROR")
+
+			PdfMerge.Merge_ProgressBar.Visible = False
+			PdfMerge.Merge_ProgressBar.Value = 0
+			Return
+		End Try
+
 		PdfMerge.Merge_ProgressBar.Value = 100
 		Notis_Add("[병합]", "파일 병합이 완료되었습니다.")
 		PdfMerge.Merge_ProgressBar.Visible = False
@@ -92,6 +105,7 @@ Public Class PDFFunction
 		Return savePath
 	End Function
 
+	' 받은 매개변수의 file 을 병합한다.
 	Private Function PDF_Merge_Source(ByRef util As PDFMergerUtility, ByVal Files As Dictionary(Of String, String)) As Boolean
 		Dim findName As String = ""
 		Try
